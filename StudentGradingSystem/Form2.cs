@@ -17,10 +17,9 @@ namespace StudentGradingSystem
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-
-            foreach(var student in Form1.studentList)
+            foreach (var student in Form1.studentList)
             {
                 listBox.Items.Add(student);
             }

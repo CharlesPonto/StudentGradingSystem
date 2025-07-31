@@ -38,20 +38,22 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(178, 84);
+            this.listBox.ItemHeight = 16;
+            this.listBox.Location = new System.Drawing.Point(211, 122);
+            this.listBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(412, 264);
+            this.listBox.Size = new System.Drawing.Size(647, 372);
             this.listBox.TabIndex = 0;
-            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F);
-            this.label1.Location = new System.Drawing.Point(289, 13);
+            this.label1.Location = new System.Drawing.Point(385, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 39);
+            this.label1.Size = new System.Drawing.Size(250, 51);
             this.label1.TabIndex = 1;
             this.label1.Text = "Student List";
             // 
@@ -60,30 +62,34 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(813, 61);
+            this.panel1.Size = new System.Drawing.Size(1084, 75);
             this.panel1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F);
-            this.label2.Location = new System.Drawing.Point(289, 8);
+            this.label2.Location = new System.Drawing.Point(385, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 39);
+            this.label2.Size = new System.Drawing.Size(250, 51);
             this.label2.TabIndex = 0;
             this.label2.Text = "Student List";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

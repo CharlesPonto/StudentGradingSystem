@@ -50,20 +50,11 @@ namespace StudentGradingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-            /*
-              txtName.Text = "";
+            txtName.Text = "";
             txtGrade1.Text = "";
             txtGrade2.Text = "";
             txtGrade3.Text = "";
             labelResult.Text = "";
-             */
-
-            foreach (var student in studentList)
-            {
-                listBoxTemp.Items.Add(student);
-            }
         }
 
         private void btnShowSummary_Click(object sender, EventArgs e)
