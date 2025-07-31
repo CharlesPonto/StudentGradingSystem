@@ -35,8 +35,19 @@ namespace StudentGradingSystem
 
             if (isPrelimValid && isMidtermValid && isFinalsValid)
             {
+                if( prelimGrade < 0  || prelimGrade > 100  ||
+                    midtermGrade < 0 || midtermGrade > 100 ||
+                    finalsGrade < 0 || finalsGrade > 100 )
+                {
+                    MessageBox.Show("Grade should be greater than 0 and less then 100");
+                    return;
+                }
+
                 double average = (prelimGrade + midtermGrade + finalsGrade) / 3;
+
+                labelResult.ForeColor = average > 75 ? Color.Red : Color.Green;
                 labelResult.Text = $"Average: {average:F2}%";
+
 
                 string summary = $"{studentName} - {average:F2}%";
                 studentList.Add(summary);
