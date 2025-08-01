@@ -17,8 +17,11 @@ namespace StudentGradingSystem
         public Form1()
         {
             InitializeComponent();
+            string format = "Student Name:             Grade:";
+            studentList.Add(format);
         }
 
+   
         private void btnCompute_Click(object sender, EventArgs e)
         {
             string studentName = txtName.Text.Trim();
@@ -35,9 +38,9 @@ namespace StudentGradingSystem
 
             if (isPrelimValid && isMidtermValid && isFinalsValid)
             {
-                if( prelimGrade < 0  || prelimGrade > 100  ||
+                if (prelimGrade < 0 || prelimGrade > 100 ||
                     midtermGrade < 0 || midtermGrade > 100 ||
-                    finalsGrade < 0 || finalsGrade > 100 )
+                    finalsGrade < 0 || finalsGrade > 100)
                 {
                     MessageBox.Show("Grade should be greater than 0 and less then 100");
                     return;
@@ -45,17 +48,29 @@ namespace StudentGradingSystem
 
                 double average = (prelimGrade + midtermGrade + finalsGrade) / 3;
 
-                labelResult.ForeColor = average > 75 ? Color.Red : Color.Green;
-                labelResult.Text = $"Average: {average:F2}%";
+               // labelResult.ForeColor = average > 75 ? Color.Green : Color.Red;
+                //labelResult.Text = $"Average: {average:F2}%";
 
-
-                string summary = $"{studentName} - {average:F2}%";
+                string summary = $"{studentName}             {average:F2}%";
                 studentList.Add(summary);
+                displayObtainedMarks(studentName, prelimGrade, midtermGrade, finalsGrade, average);
             }
             else
             {
                 MessageBox.Show("Please input valid numbers for all grades.");
             }
+        }
+
+
+        private void displayObtainedMarks(string studentName, double prelimGrade, double midtermGrade, double finalsGrade, double average)
+        {
+            OMname.Text = studentName;
+            OMprelim.Text = prelimGrade.ToString();
+            OMmidterm.Text = midtermGrade.ToString();
+            OMfinals.Text = finalsGrade.ToString();
+            horizontalLine.Visible = true;
+            labelResult.Text = $"{average:F2}%";
+            labelResult.ForeColor = average > 75 ? Color.Green : Color.Red;
         }
 
 
